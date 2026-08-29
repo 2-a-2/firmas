@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* CONTENEDOR GENERAL
+--------------------------------------------- */
+
+.nmf-signature {
+  width: 282px;
+  height: 202px;
+  margin: 0 auto 20px;
+  padding: 10px;
+
+  background: #121212;
+  border: 1px solid #050505;
+
+  box-sizing: content-box;
+}
+
+.nmf-signature br {
+  display: none;
+}
+
+
+/* MARCO INTERIOR
+--------------------------------------------- */
+
+.nmf-frame {
+  position: relative;
+
+  width: 280px;
+  height: 200px;
+
+  padding: 5px;
+
+  border: 1px solid #292929;
+  background: #0c0c0c;
+
+  box-sizing: border-box;
+}
+
+
+/* LÍNEA DE ACENTO ENTRE MARCO E IMAGEN
+--------------------------------------------- */
+
+.nmf-frame::before {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  border: 1px solid var(--accent);
+
+  pointer-events: none;
+  z-index: 20;
+
+  opacity: .85;
+}
+
+
+/* ZONA DE LOS GIFS
+--------------------------------------------- */
+
+.nmf-media {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #101010;
+}
+
+
+/* GIFS
+--------------------------------------------- */
+
+.nmf-gif {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  transition:
+    opacity .8s ease,
+    transform 1.5s ease,
+    filter 1s ease;
+}
+
+
+/* GIF NORMAL */
+
+.nmf-gif-one {
+  opacity: 1;
+  z-index: 1;
+
+  transform: scale(1);
+}
+
+
+/* GIF HOVER */
+
+.nmf-gif-two {
+  opacity: 0;
+  z-index: 2;
+
+  transform: scale(1.06);
+
+  filter:
+    brightness(.75)
+    saturate(.85);
+}
+
+
+/* SOMBREADO PARA EL TEXTO
+--------------------------------------------- */
+
+.nmf-shadow {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.94) 0%,
+      rgba(5,5,5,.82) 27%,
+      rgba(5,5,5,.38) 50%,
+      rgba(5,5,5,.05) 72%,
+      transparent 100%
+    );
+
+  transition:
+    opacity .7s ease,
+    transform .8s ease;
+}
+
+
+/* TEXTO
+--------------------------------------------- */
+
+.nmf-copy {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 17px;
+  top: 25px;
+
+  width: 130px;
+
+  text-align: center;
+
+  color: #c9c9c9;
+
+  transition:
+    opacity .6s ease,
+    transform .8s ease,
+    filter .6s ease;
+}
+
+
+/* DETALLE SUPERIOR */
+
+.nmf-detail {
+  margin-bottom: 8px;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+
+  line-height: 100%;
+
+  color: var(--accent);
+
+  opacity: .9;
+}
+
+
+/* TÍTULO */
+
+.nmf-title {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 110%;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: var(--accent);
+
+  text-shadow: 0 1px 4px #000;
+}
+
+
+/* DIVISOR */
+
+.nmf-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin: 10px 0;
+}
+
+.nmf-line span {
+  display: block;
+
+  width: 24px;
+  height: 1px;
+
+  background: var(--accent);
+
+  opacity: .55;
+}
+
+.nmf-line i {
+  font-style: normal;
+
+  font-size: 5px;
+
+  color: var(--accent);
+}
+
+
+/* FRASE */
+
+.nmf-text {
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 6.5px;
+  font-weight: 300;
+
+  line-height: 170%;
+
+  letter-spacing: .45px;
+
+  color: #c5c5c5;
+}
+
+.nmf-text b {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 9px;
+  font-style: italic;
+  font-weight: 500;
+
+  line-height: 120%;
+
+  letter-spacing: .4px;
+
+  color: var(--accent);
+}
+
+
+/* HOVER
+--------------------------------------------- */
+
+.nmf-signature:hover .nmf-gif-one {
+  opacity: 0;
+
+  transform: scale(1.05);
+}
+
+.nmf-signature:hover .nmf-gif-two {
+  opacity: 1;
+
+  transform: scale(1);
+
+  filter:
+    brightness(.9)
+    saturate(1);
+}
+
+.nmf-signature:hover .nmf-shadow {
+  opacity: 0;
+
+  transform: translateX(-20px);
+}
+
+.nmf-signature:hover .nmf-copy {
+  opacity: 0;
+
+  transform: translateX(-12px);
+
+  filter: blur(2px);
+}
+
+
+/* PEQUEÑO BRILLO DEL MARCO EN HOVER
+--------------------------------------------- */
+
+.nmf-frame::after {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  z-index: 21;
+
+  border: 1px solid var(--accent);
+
+  box-shadow:
+    inset 0 0 0 transparent,
+    0 0 0 transparent;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity .7s ease,
+    box-shadow .7s ease;
+}
+
+.nmf-signature:hover .nmf-frame::after {
+  opacity: .6;
+
+  box-shadow:
+    inset 0 0 8px rgba(105,134,221,.18),
+    0 0 6px rgba(105,134,221,.12);
+}
