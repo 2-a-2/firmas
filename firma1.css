@@ -373,3 +373,10 @@
     inset 0 0 8px rgba(105,134,221,.18),
     0 0 6px rgba(105,134,221,.12);
 }
+/* AJUSTE FINAL POSICIÓN FRASE */
+.nmf-firsttext {
+  top: auto !important;
+  bottom: 8px !important;
+  left: 26px !important;
+  right: 26px !important;
+}
