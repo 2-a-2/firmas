@@ -39,7 +39,7 @@
 }
 
 
-/* LÍNEA DE ACENTO
+/* BORDE DE ACENTO
 --------------------------------------------- */
 
 .nmf-frame::before {
@@ -92,7 +92,7 @@
 }
 
 
-/* GIF 1 */
+/* GIF NORMAL */
 
 .nmf-gif-one {
   opacity: 1;
@@ -102,7 +102,7 @@
 }
 
 
-/* GIF 2 */
+/* GIF HOVER */
 
 .nmf-gif-two {
   opacity: 0;
@@ -116,6 +116,28 @@
 }
 
 
+/* SOMBREADO INFERIOR DEL PRIMER GIF
+--------------------------------------------- */
+
+.nmf-firstveil {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0,0,0,.03) 42%,
+      rgba(0,0,0,.28) 68%,
+      rgba(0,0,0,.62) 100%
+    );
+
+  transition: opacity .5s ease;
+}
+
+
 /* TEXTO DEL PRIMER GIF
 --------------------------------------------- */
 
@@ -124,7 +146,8 @@
 
   left: 26px;
   right: 26px;
-  top: 136px;
+  bottom: 18px;
+  top: auto;
 
   z-index: 5;
 
@@ -150,46 +173,10 @@
 }
 
 
-/* SOMBRA SUAVE TRAS EL TEXTO */
+/* PALABRAS EN COLOR DE ACENTO */
 
-.nmf-firstveil {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 4;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(0,0,0,.06) 40%,
-      rgba(0,0,0,.45) 72%,
-      rgba(0,0,0,.62) 100%
-    );
-
-  transition: opacity .5s ease;
-}
-
-
-/* LÍNEA INFERIOR */
-
-.nmf-firstline {
-  position: absolute;
-
-  left: 42px;
-  right: 42px;
-  top: 174px;
-
-  height: 1px;
-
-  z-index: 5;
-
-  background: #ffffff;
-
-  opacity: .85;
-
-  transition: opacity .5s ease;
+.nmf-firsttext span {
+  color: var(--accent) !important;
 }
 
 
@@ -218,7 +205,7 @@
 }
 
 
-/* SOMBRA PARA EL NOMBRE */
+/* SOMBRA DETRÁS DEL NOMBRE */
 
 .nmf-name::before {
   content: "";
@@ -229,7 +216,7 @@
   top: 50%;
 
   width: 250px;
-  height: 95px;
+  height: 100px;
 
   transform: translate(-50%, -50%);
 
@@ -238,10 +225,26 @@
   background:
     radial-gradient(
       ellipse,
-      rgba(0,0,0,.64) 0%,
-      rgba(0,0,0,.35) 50%,
-      transparent 75%
+      rgba(0,0,0,.68) 0%,
+      rgba(0,0,0,.35) 52%,
+      transparent 76%
     );
+}
+
+
+/* ADORNO */
+
+.nmf-name-detail {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+
+  color: var(--accent);
+
+  opacity: .9;
 }
 
 
@@ -293,23 +296,6 @@
 }
 
 
-/* PEQUEÑO ADORNO */
-
-.nmf-name-detail {
-  display: block;
-
-  margin-bottom: 8px;
-
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: 10px;
-
-  color: var(--accent);
-
-  opacity: .9;
-}
-
-
 /* HOVER
 --------------------------------------------- */
 
@@ -330,7 +316,7 @@
 }
 
 
-/* DESAPARECE EL TEXTO DEL GIF 1 */
+/* DESAPARECE LA FRASE */
 
 .nmf-signature:hover .nmf-firsttext {
   opacity: 0;
@@ -341,10 +327,6 @@
 }
 
 .nmf-signature:hover .nmf-firstveil {
-  opacity: 0;
-}
-
-.nmf-signature:hover .nmf-firstline {
   opacity: 0;
 }
 
