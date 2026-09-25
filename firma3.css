@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 
-/* FIRMA GENERAL
+/* CONTENEDOR
 --------------------------------------------- */
 
 .lyo3-signature {
   --accent: #A38787;
 
-  position: relative;
+  position: relative !important;
 
-  width: 350px;
-  height: 250px;
+  width: 350px !important;
+  height: 250px !important;
 
-  margin: 0 auto 20px;
+  margin: 0 auto 20px !important;
 
-  overflow: hidden;
+  overflow: hidden !important;
 
-  background: #d5d2d4;
-  border: 1px solid #bbb7ba;
+  box-sizing: border-box !important;
 
-  box-sizing: border-box;
+  background: #d4d1d3;
+
+  border: 1px solid #bdb9bc;
 
   font-size: 0;
 }
@@ -29,25 +30,91 @@
 --------------------------------------------- */
 
 .lyo3-image {
-  position: absolute;
+  position: absolute !important;
 
-  inset: 5px;
+  left: 7px !important;
+  right: 7px !important;
+  top: 7px !important;
+  bottom: 7px !important;
 
-  background-size: cover;
-  background-position: center right;
+  width: auto !important;
+  height: auto !important;
+
+  z-index: 1;
+
+  background-size: cover !important;
+  background-position: 68% center !important;
+  background-repeat: no-repeat !important;
 
   filter:
-    brightness(1.02)
     saturate(.78)
+    brightness(.98)
     contrast(.94);
 
   transition:
-    transform .9s ease,
-    filter .9s ease;
+    transform .8s ease,
+    filter .8s ease;
 }
 
 
-/* DOBLE MARCO
+/* CAPA CLARA DE LA IZQUIERDA
+--------------------------------------------- */
+
+.lyo3-soft {
+  position: absolute;
+
+  left: 7px;
+  right: 7px;
+  top: 7px;
+  bottom: 7px;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(239,236,235,.98) 0%,
+      rgba(239,236,235,.96) 25%,
+      rgba(239,236,235,.88) 40%,
+      rgba(239,236,235,.62) 50%,
+      rgba(239,236,235,.18) 66%,
+      transparent 82%
+    );
+
+  pointer-events: none;
+}
+
+
+/* TEXTURA TIPO PAPEL
+--------------------------------------------- */
+
+.lyo3-texture {
+  position: absolute;
+
+  left: 7px;
+  top: 7px;
+
+  width: 180px;
+  height: 236px;
+
+  z-index: 3;
+
+  opacity: .18;
+
+  background:
+    repeating-linear-gradient(
+      -8deg,
+      rgba(120,110,112,.10) 0px,
+      rgba(120,110,112,.10) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+
+  pointer-events: none;
+}
+
+
+/* DOBLE MARCO FINO
 --------------------------------------------- */
 
 .lyo3-signature::before {
@@ -55,11 +122,11 @@
 
   position: absolute;
 
-  inset: 6px;
+  inset: 5px;
 
   z-index: 20;
 
-  border: 1px solid rgba(163,135,135,.72);
+  border: 1px solid rgba(163,135,135,.65);
 
   pointer-events: none;
 }
@@ -73,57 +140,9 @@
 
   z-index: 20;
 
-  border: 1px solid rgba(255,255,255,.62);
+  border: 1px solid rgba(255,255,255,.72);
 
   pointer-events: none;
-}
-
-
-/* DEGRADADO CLARO DE LA IZQUIERDA
---------------------------------------------- */
-
-.lyo3-soft {
-  position: absolute;
-
-  inset: 5px;
-
-  z-index: 2;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(239,236,236,.97) 0%,
-      rgba(239,236,236,.91) 27%,
-      rgba(239,236,236,.72) 43%,
-      rgba(239,236,236,.28) 60%,
-      rgba(239,236,236,.03) 77%
-    );
-
-  transition: opacity .8s ease;
-}
-
-
-/* TEXTURA SUAVE
---------------------------------------------- */
-
-.lyo3-texture {
-  position: absolute;
-
-  inset: 5px;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  opacity: .20;
-
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(255,255,255,.17) 4px
-    );
 }
 
 
@@ -133,37 +152,38 @@
 .lyo3-circle {
   position: absolute;
 
-  left: 37px;
-  top: 29px;
+  left: 35px;
+  top: 35px;
 
-  width: 165px;
-  height: 165px;
+  width: 155px;
+  height: 155px;
 
   z-index: 4;
 
-  border: 1px solid rgba(163,135,135,.38);
+  border: 1px solid rgba(163,135,135,.34);
+
   border-right-color: transparent;
   border-bottom-color: transparent;
 
   border-radius: 50%;
 
-  transform: rotate(-12deg);
+  transform: rotate(-17deg);
 
   pointer-events: none;
 }
 
 
-/* ADORNO VERTICAL IZQUIERDO
+/* DETALLE VERTICAL
 --------------------------------------------- */
 
 .lyo3-side {
   position: absolute;
 
-  left: 17px;
-  top: 24px;
-  bottom: 24px;
+  left: 18px;
+  top: 29px;
 
   width: 1px;
+  height: 180px;
 
   z-index: 5;
 
@@ -171,8 +191,8 @@
     linear-gradient(
       to bottom,
       transparent,
-      var(--accent) 17%,
-      var(--accent) 83%,
+      var(--accent) 15%,
+      var(--accent) 85%,
       transparent
     );
 
@@ -184,13 +204,12 @@
 
   position: absolute;
 
-  top: -3px;
+  top: -6px;
   left: -7px;
 
-  color: var(--accent);
-
-  font-family: serif;
   font-size: 15px;
+
+  color: var(--accent);
 }
 
 .lyo3-side::after {
@@ -198,68 +217,60 @@
 
   position: absolute;
 
+  top: 88px;
   left: -3px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: var(--accent);
 
   font-size: 5px;
+
+  color: var(--accent);
 }
 
 
-/* TEXTO PRINCIPAL
+/* TEXTO
 --------------------------------------------- */
 
 .lyo3-copy {
   position: absolute;
 
   left: 40px;
-  top: 57px;
+  top: 64px;
 
-  width: 170px;
+  width: 165px;
 
-  z-index: 7;
+  z-index: 8;
 
   text-align: left;
-
-  transition:
-    transform .7s ease,
-    opacity .7s ease;
 }
 
 
-/* NOMBRE
---------------------------------------------- */
+/* NOMBRE */
 
 .lyo3-first {
   display: block;
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 37px;
+  font-size: 38px;
   font-weight: 500;
 
-  line-height: 82%;
+  line-height: 78%;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
   text-transform: uppercase;
 
-  color: #4c4749;
+  color: #464043;
 
-  text-shadow: 0 1px 1px rgba(255,255,255,.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,.65);
 }
 
 
-/* APELLIDO
---------------------------------------------- */
+/* APELLIDO */
 
 .lyo3-last {
   display: block;
 
-  margin-top: 8px;
+  margin-top: 9px;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -276,17 +287,16 @@
 }
 
 
-/* DIVISOR
---------------------------------------------- */
+/* SEPARADOR */
 
 .lyo3-divider {
   position: relative;
 
-  width: 160px;
-  height: 15px;
+  width: 155px;
+  height: 20px;
 
-  margin-top: 13px;
-  margin-bottom: 9px;
+  margin-top: 10px;
+  margin-bottom: 7px;
 }
 
 .lyo3-divider::before {
@@ -296,7 +306,7 @@
 
   left: 0;
   right: 0;
-  top: 7px;
+  top: 9px;
 
   height: 1px;
 
@@ -304,52 +314,48 @@
     linear-gradient(
       90deg,
       var(--accent),
-      rgba(163,135,135,.20)
+      rgba(163,135,135,.25)
     );
 }
 
 .lyo3-divider::after {
-  content: "◆";
+  content: "✦";
 
   position: absolute;
 
-  left: 72px;
-  top: 1px;
+  left: 70px;
+  top: 2px;
 
   padding: 0 5px;
 
-  background: rgba(237,234,234,.9);
+  background: #ece8e8;
 
   color: var(--accent);
 
-  font-size: 7px;
+  font-size: 8px;
 
-  line-height: 12px;
+  line-height: 14px;
 }
 
 
-/* FRASE
---------------------------------------------- */
+/* FRASE */
 
 .lyo3-text {
-  width: 158px;
+  width: 155px;
 
   font-family: 'Montserrat', sans-serif;
 
-  font-size: 7.5px;
+  font-size: 7px;
   font-weight: 400;
 
-  line-height: 170%;
+  line-height: 175%;
 
-  letter-spacing: 1.25px;
+  letter-spacing: 1.1px;
 
   text-transform: uppercase;
 
-  color: #666064;
+  color: #625c5f;
 }
-
-
-/* PALABRAS DESTACADAS */
 
 .lyo3-text span {
   color: var(--accent);
@@ -358,52 +364,52 @@
 }
 
 
-/* DETALLE SUPERIOR DERECHO
+/* ETIQUETA SUPERIOR DERECHA
 --------------------------------------------- */
 
 .lyo3-tag {
   position: absolute;
 
-  right: 17px;
+  right: 15px;
   top: 7px;
 
-  z-index: 8;
+  width: 25px;
+  height: 53px;
 
-  width: 27px;
-  height: 57px;
+  z-index: 9;
 
   background: rgba(163,135,135,.78);
-
-  color: rgba(255,255,255,.80);
-
-  text-align: center;
 
   font-family: 'Cormorant Garamond', serif;
 
   font-size: 17px;
 
-  line-height: 57px;
+  line-height: 53px;
+
+  text-align: center;
+
+  color: rgba(255,255,255,.82);
 }
 
 
-/* DETALLE INFERIOR
+/* PUNTITOS INFERIORES
 --------------------------------------------- */
 
 .lyo3-dots {
   position: absolute;
 
-  left: 17px;
+  left: 18px;
   bottom: 8px;
 
-  z-index: 8;
-
-  color: var(--accent);
+  z-index: 9;
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size: 7px;
 
-  letter-spacing: 5px;
+  letter-spacing: 4px;
+
+  color: var(--accent);
 
   opacity: .75;
 }
@@ -413,18 +419,10 @@
 --------------------------------------------- */
 
 .lyo3-signature:hover .lyo3-image {
-  transform: scale(1.035);
+  transform: scale(1.025);
 
   filter:
-    brightness(.96)
-    saturate(.86)
-    contrast(.98);
-}
-
-.lyo3-signature:hover .lyo3-soft {
-  opacity: .89;
-}
-
-.lyo3-signature:hover .lyo3-copy {
-  transform: translateX(3px);
+    saturate(.84)
+    brightness(.95)
+    contrast(.97);
 }
