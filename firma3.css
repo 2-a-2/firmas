@@ -3,15 +3,14 @@
 .lyo3-signature {
   --accent:#A38787;
 
-  position:relative!important;
-  width:350px!important;
-  height:250px!important;
-  margin:0 auto 20px!important;
-  overflow:hidden!important;
-  box-sizing:border-box!important;
+  position:relative !important;
+  width:350px !important;
+  height:250px !important;
+  margin:0 auto 20px !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
 
   background:#ebe8e8;
-
   border:6px solid #d2cfd1;
 
   box-shadow:
@@ -22,37 +21,34 @@
 }
 
 
-/* FOTO: AHORA OCUPA PRINCIPALMENTE LA DERECHA */
+/* FOTO */
 
 .lyo3-image {
-  position:absolute!important;
+  position:absolute !important;
 
-  top:7px!important;
-  right:7px!important;
-  bottom:7px!important;
-  left:122px!important;
+  top:7px !important;
+  right:7px !important;
+  bottom:7px !important;
+  left:138px !important;
 
-  width:auto!important;
-  height:auto!important;
+  width:auto !important;
+  height:auto !important;
 
-  background-size:cover!important;
-  background-position:58% center!important;
-  background-repeat:no-repeat!important;
+  background-size:cover !important;
+  background-position:63% center !important;
+  background-repeat:no-repeat !important;
 
   z-index:1;
 
   filter:
-    saturate(.82)
-    contrast(.94)
+    saturate(.84)
+    contrast(.95)
     brightness(.99);
 
   transition:
     transform .8s ease,
     filter .8s ease;
 }
-
-
-/* FUSIÓN DE LA FOTO CON EL PANEL */
 
 .lyo3-image::before {
   content:"";
@@ -64,17 +60,17 @@
     linear-gradient(
       90deg,
       #ebe8e8 0%,
-      rgba(235,232,232,.88) 7%,
-      rgba(235,232,232,.48) 17%,
-      rgba(235,232,232,.12) 30%,
-      transparent 45%
+      rgba(235,232,232,.72) 8%,
+      rgba(235,232,232,.28) 18%,
+      rgba(235,232,232,.08) 26%,
+      transparent 34%
     );
 
   pointer-events:none;
 }
 
 
-/* PANEL CLARO IZQUIERDO */
+/* PANEL IZQUIERDO */
 
 .lyo3-signature::before {
   content:"";
@@ -85,16 +81,16 @@
   top:7px;
   bottom:7px;
 
-  width:152px;
+  width:142px;
 
   z-index:2;
 
   background:
     linear-gradient(
       90deg,
-      rgba(239,236,236,.98),
-      rgba(239,236,236,.94) 75%,
-      rgba(239,236,236,.15)
+      rgba(239,236,236,.97),
+      rgba(239,236,236,.94) 72%,
+      rgba(239,236,236,.18) 100%
     );
 
   pointer-events:none;
@@ -123,10 +119,10 @@
 .lyo3-copy {
   position:absolute;
 
-  left:27px;
-  top:51px;
+  left:30px;
+  top:58px;
 
-  width:155px;
+  width:168px;
 
   z-index:8;
 
@@ -166,16 +162,18 @@
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:38px;
+  font-size:33px;
   font-weight:500;
 
-  line-height:.82;
+  line-height:.88;
 
-  letter-spacing:2px;
+  letter-spacing:1px;
 
   text-transform:uppercase;
 
   color:#464143;
+
+  white-space:nowrap;
 }
 
 
@@ -184,16 +182,16 @@
 .lyo3-last {
   display:block;
 
-  margin-top:9px;
+  margin-top:8px;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:18px;
+  font-size:17px;
   font-weight:500;
 
   line-height:1;
 
-  letter-spacing:6px;
+  letter-spacing:5px;
 
   text-transform:uppercase;
 
@@ -253,20 +251,20 @@
 /* FRASE */
 
 .lyo3-text {
-  width:145px;
+  width:150px;
 
   font-family:'Montserrat',sans-serif;
 
-  font-size:7px;
+  font-size:8px;
   font-weight:400;
 
-  line-height:1.75;
+  line-height:1.72;
 
-  letter-spacing:1px;
+  letter-spacing:.95px;
 
   text-transform:uppercase;
 
-  color:#615b5e;
+  color:#554f52;
 }
 
 .lyo3-text span {
@@ -352,7 +350,7 @@
 }
 
 
-/* PUNTITOS */
+/* PUNTITOS INFERIORES */
 
 .lyo3-dots {
   position:absolute;
@@ -374,12 +372,12 @@
 }
 
 
-/* YA NO NECESITAMOS ESTAS CAPAS */
+/* CAPAS QUE YA NO USAMOS */
 
 .lyo3-soft,
 .lyo3-texture,
 .lyo3-circle {
-  display:none!important;
+  display:none !important;
 }
 
 
