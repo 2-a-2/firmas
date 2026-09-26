@@ -1,17 +1,21 @@
-/* VERSION 10 */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 .lyo3-signature {
   --accent:#A38787;
 
   position:relative !important;
+
   width:350px !important;
   height:250px !important;
+
   margin:0 auto 20px !important;
+
   overflow:hidden !important;
+
   box-sizing:border-box !important;
 
   background:#ebe8e8;
+
   border:6px solid #d2cfd1;
 
   box-shadow:
@@ -22,10 +26,11 @@
 }
 
 
-/* FOTO */
+/* IMAGEN
+--------------------------------------------- */
 
 .lyo3-image {
-  left:138px!important;
+  position:absolute !important;
 
   top:7px !important;
   right:7px !important;
@@ -51,6 +56,11 @@
     filter .8s ease;
 }
 
+
+/* DEGRADADO SUAVE SOBRE EL BORDE IZQUIERDO
+DE LA IMAGEN
+--------------------------------------------- */
+
 .lyo3-image::before {
   content:"";
 
@@ -71,7 +81,8 @@
 }
 
 
-/* PANEL IZQUIERDO */
+/* PANEL CLARO IZQUIERDO
+--------------------------------------------- */
 
 .lyo3-signature::before {
   content:"";
@@ -89,7 +100,7 @@
   background:
     linear-gradient(
       90deg,
-      rgba(239,236,236,.97),
+      rgba(239,236,236,.97) 0%,
       rgba(239,236,236,.94) 72%,
       rgba(239,236,236,.18) 100%
     );
@@ -98,7 +109,8 @@
 }
 
 
-/* MARCO INTERIOR */
+/* MARCO INTERIOR
+--------------------------------------------- */
 
 .lyo3-signature::after {
   content:"";
@@ -115,15 +127,16 @@
 }
 
 
-/* BLOQUE DE TEXTO */
+/* BLOQUE DE TEXTO
+--------------------------------------------- */
 
 .lyo3-copy {
   position:absolute;
 
-  left:30px;
+  left:26px;
   top:58px;
 
-  width:168px;
+  width:185px;
 
   z-index:8;
 
@@ -131,20 +144,22 @@
 }
 
 
-/* ADORNO CURVO */
+/* ARCO DECORATIVO
+--------------------------------------------- */
 
 .lyo3-copy::before {
   content:"";
 
   position:absolute;
 
-  left:-11px;
-  top:-27px;
+  left:-10px;
+  top:-28px;
 
   width:145px;
   height:145px;
 
   border:1px solid rgba(163,135,135,.30);
+
   border-right-color:transparent;
   border-bottom-color:transparent;
 
@@ -156,14 +171,15 @@
 }
 
 
-/* NOMBRE */
+/* NOMBRE
+--------------------------------------------- */
 
 .lyo3-first {
   display:block;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:33px;
+  font-size:31px;
   font-weight:500;
 
   line-height:.88;
@@ -178,7 +194,8 @@
 }
 
 
-/* APELLIDO */
+/* APELLIDO
+--------------------------------------------- */
 
 .lyo3-last {
   display:block;
@@ -197,10 +214,13 @@
   text-transform:uppercase;
 
   color:var(--accent);
+
+  white-space:nowrap;
 }
 
 
-/* DIVISOR */
+/* DIVISOR
+--------------------------------------------- */
 
 .lyo3-divider {
   position:relative;
@@ -245,11 +265,13 @@
   color:var(--accent);
 
   font-size:8px;
+
   line-height:16px;
 }
 
 
-/* FRASE */
+/* FRASE
+--------------------------------------------- */
 
 .lyo3-text {
   width:150px;
@@ -270,11 +292,13 @@
 
 .lyo3-text span {
   color:var(--accent);
+
   font-weight:500;
 }
 
 
-/* ADORNO VERTICAL */
+/* ADORNO VERTICAL
+--------------------------------------------- */
 
 .lyo3-side {
   position:absolute;
@@ -325,7 +349,8 @@
 }
 
 
-/* ETIQUETA SUPERIOR */
+/* ETIQUETA SUPERIOR
+--------------------------------------------- */
 
 .lyo3-tag {
   position:absolute;
@@ -347,11 +372,13 @@
   font-size:16px;
 
   text-align:center;
+
   line-height:50px;
 }
 
 
-/* PUNTITOS INFERIORES */
+/* PUNTITOS INFERIORES
+--------------------------------------------- */
 
 .lyo3-dots {
   position:absolute;
@@ -373,16 +400,8 @@
 }
 
 
-/* CAPAS QUE YA NO USAMOS */
-
-.lyo3-soft,
-.lyo3-texture,
-.lyo3-circle {
-  display:none !important;
-}
-
-
-/* HOVER */
+/* HOVER
+--------------------------------------------- */
 
 .lyo3-signature:hover .lyo3-image {
   transform:scale(1.025);
