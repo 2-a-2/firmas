@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
+
+/* FIRMA
+------------------------------------------------ */
+
 .lyo3-signature {
   --accent:#A38787;
 
   position:relative !important;
+  display:block !important;
 
   width:350px !important;
   height:250px !important;
@@ -11,23 +16,30 @@
   margin:0 auto 20px !important;
 
   overflow:hidden !important;
-
   box-sizing:border-box !important;
 
-  background:#ebe8e8;
+  background:#ebe8e8 !important;
 
-  border:6px solid #d2cfd1;
+  border:6px solid #d2cfd1 !important;
 
   box-shadow:
     inset 0 0 0 1px rgba(163,135,135,.70),
     inset 0 0 0 6px rgba(255,255,255,.48);
 
-  font-size:0;
+  font-size:0 !important;
+  line-height:normal !important;
 }
 
 
-/* IMAGEN
---------------------------------------------- */
+/* EVITA LOS SALTOS AUTOMÁTICOS DEL FORO */
+
+.lyo3-signature br {
+  display:none !important;
+}
+
+
+/* FOTO
+------------------------------------------------ */
 
 .lyo3-image {
   position:absolute !important;
@@ -40,11 +52,11 @@
   width:auto !important;
   height:auto !important;
 
+  z-index:1 !important;
+
   background-size:cover !important;
   background-position:63% center !important;
   background-repeat:no-repeat !important;
-
-  z-index:1;
 
   filter:
     saturate(.84)
@@ -57,69 +69,66 @@
 }
 
 
-/* DEGRADADO SUAVE SOBRE EL BORDE IZQUIERDO
-DE LA IMAGEN
---------------------------------------------- */
+/* FUNDIDO ENTRE PANEL Y FOTO */
 
 .lyo3-image::before {
   content:"";
 
-  position:absolute;
-  inset:0;
+  position:absolute !important;
+  inset:0 !important;
 
   background:
     linear-gradient(
       90deg,
-      #ebe8e8 0%,
-      rgba(235,232,232,.72) 8%,
-      rgba(235,232,232,.28) 18%,
-      rgba(235,232,232,.08) 26%,
-      transparent 34%
+      rgba(235,232,232,.82) 0%,
+      rgba(235,232,232,.48) 7%,
+      rgba(235,232,232,.16) 16%,
+      transparent 28%
     );
 
   pointer-events:none;
 }
 
 
-/* PANEL CLARO IZQUIERDO
---------------------------------------------- */
+/* PANEL IZQUIERDO
+------------------------------------------------ */
 
 .lyo3-signature::before {
   content:"";
 
-  position:absolute;
+  position:absolute !important;
 
-  left:7px;
-  top:7px;
-  bottom:7px;
+  left:7px !important;
+  top:7px !important;
+  bottom:7px !important;
 
-  width:142px;
+  width:135px !important;
 
-  z-index:2;
+  z-index:2 !important;
 
   background:
     linear-gradient(
       90deg,
-      rgba(239,236,236,.97) 0%,
-      rgba(239,236,236,.94) 72%,
-      rgba(239,236,236,.18) 100%
+      #efeced 0%,
+      #efeced 74%,
+      rgba(239,236,237,.68) 88%,
+      rgba(239,236,237,0) 100%
     );
 
   pointer-events:none;
 }
 
 
-/* MARCO INTERIOR
---------------------------------------------- */
+/* MARCO INTERIOR */
 
 .lyo3-signature::after {
   content:"";
 
-  position:absolute;
+  position:absolute !important;
 
-  inset:7px;
+  inset:7px !important;
 
-  z-index:20;
+  z-index:30 !important;
 
   border:1px solid rgba(163,135,135,.68);
 
@@ -128,32 +137,37 @@ DE LA IMAGEN
 
 
 /* BLOQUE DE TEXTO
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-copy {
-  position:absolute;
+  position:absolute !important;
 
-  left:26px;
-  top:58px;
+  left:29px !important;
+  top:61px !important;
 
-  width:185px;
+  width:205px !important;
+  height:145px !important;
 
-  z-index:8;
+  z-index:10 !important;
 
-  text-align:left;
+  display:block !important;
+
+  text-align:left !important;
+  line-height:normal !important;
+
+  overflow:visible !important;
 }
 
 
-/* ARCO DECORATIVO
---------------------------------------------- */
+/* ARCO */
 
 .lyo3-copy::before {
   content:"";
 
   position:absolute;
 
-  left:-10px;
-  top:-28px;
+  left:-13px;
+  top:-30px;
 
   width:145px;
   height:145px;
@@ -172,63 +186,79 @@ DE LA IMAGEN
 
 
 /* NOMBRE
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-first {
-  display:block;
+  display:block !important;
 
-  font-family:'Cormorant Garamond',serif;
+  width:205px !important;
+  max-width:none !important;
 
-  font-size:31px;
-  font-weight:500;
+  margin:0 !important;
+  padding:0 !important;
 
-  line-height:.88;
+  font-family:'Cormorant Garamond',serif !important;
 
-  letter-spacing:1px;
+  font-size:30px !important;
+  font-weight:500 !important;
 
-  text-transform:uppercase;
+  line-height:30px !important;
 
-  color:#464143;
+  letter-spacing:1px !important;
 
-  white-space:nowrap;
+  text-transform:uppercase !important;
+
+  color:#464143 !important;
+
+  white-space:nowrap !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+
+  overflow:visible !important;
 }
 
 
 /* APELLIDO
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-last {
-  display:block;
+  display:block !important;
 
-  margin-top:8px;
+  width:190px !important;
 
-  font-family:'Cormorant Garamond',serif;
+  margin:7px 0 0 0 !important;
+  padding:0 !important;
 
-  font-size:17px;
-  font-weight:500;
+  font-family:'Cormorant Garamond',serif !important;
 
-  line-height:1;
+  font-size:17px !important;
+  font-weight:500 !important;
 
-  letter-spacing:5px;
+  line-height:20px !important;
 
-  text-transform:uppercase;
+  letter-spacing:5px !important;
 
-  color:var(--accent);
+  text-transform:uppercase !important;
 
-  white-space:nowrap;
+  color:var(--accent) !important;
+
+  white-space:nowrap !important;
+  word-break:keep-all !important;
 }
 
 
 /* DIVISOR
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-divider {
-  position:relative;
+  position:relative !important;
 
-  width:148px;
-  height:17px;
+  display:block !important;
 
-  margin:12px 0 8px;
+  width:148px !important;
+  height:17px !important;
+
+  margin:10px 0 6px 0 !important;
 }
 
 .lyo3-divider::before {
@@ -271,45 +301,63 @@ DE LA IMAGEN
 
 
 /* FRASE
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-text {
-  width:150px;
+  position:relative !important;
 
-  font-family:'Montserrat',sans-serif;
+  display:block !important;
 
-  font-size:8px;
-  font-weight:400;
+  width:150px !important;
 
-  line-height:1.72;
+  margin:0 !important;
+  padding:0 !important;
 
-  letter-spacing:.95px;
+  font-family:'Montserrat',sans-serif !important;
 
-  text-transform:uppercase;
+  font-size:7px !important;
+  font-weight:400 !important;
 
-  color:#554f52;
+  line-height:12px !important;
+
+  letter-spacing:.75px !important;
+
+  text-transform:uppercase !important;
+
+  color:#4f494c !important;
+
+  white-space:normal !important;
+
+  opacity:1 !important;
+
+  z-index:12 !important;
 }
 
 .lyo3-text span {
-  color:var(--accent);
+  display:inline !important;
 
-  font-weight:500;
+  color:var(--accent) !important;
+
+  font-size:inherit !important;
+  font-weight:500 !important;
+
+  line-height:inherit !important;
 }
 
 
 /* ADORNO VERTICAL
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-side {
-  position:absolute;
+  position:absolute !important;
 
-  left:17px;
-  top:31px;
-  bottom:30px;
+  left:17px !important;
+  top:31px !important;
+  bottom:30px !important;
 
-  width:1px;
+  width:1px !important;
 
-  z-index:7;
+  z-index:7 !important;
 
   background:
     linear-gradient(
@@ -350,58 +398,58 @@ DE LA IMAGEN
 
 
 /* ETIQUETA SUPERIOR
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-tag {
-  position:absolute;
+  position:absolute !important;
 
-  top:7px;
-  right:18px;
+  top:7px !important;
+  right:18px !important;
 
-  z-index:9;
+  z-index:15 !important;
 
-  width:24px;
-  height:50px;
+  width:24px !important;
+  height:50px !important;
 
-  background:rgba(163,135,135,.78);
+  background:rgba(163,135,135,.78) !important;
 
-  color:#f1eded;
+  color:#f1eded !important;
 
-  font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond',serif !important;
 
-  font-size:16px;
+  font-size:16px !important;
 
-  text-align:center;
+  text-align:center !important;
 
-  line-height:50px;
+  line-height:50px !important;
 }
 
 
-/* PUNTITOS INFERIORES
---------------------------------------------- */
+/* PUNTITOS
+------------------------------------------------ */
 
 .lyo3-dots {
-  position:absolute;
+  position:absolute !important;
 
-  left:19px;
-  bottom:9px;
+  left:19px !important;
+  bottom:9px !important;
 
-  z-index:9;
+  z-index:15 !important;
 
-  color:var(--accent);
+  color:var(--accent) !important;
 
-  font-family:Arial,sans-serif;
+  font-family:Arial,sans-serif !important;
 
-  font-size:6px;
+  font-size:6px !important;
 
-  letter-spacing:4px;
+  letter-spacing:4px !important;
 
   opacity:.7;
 }
 
 
 /* HOVER
---------------------------------------------- */
+------------------------------------------------ */
 
 .lyo3-signature:hover .lyo3-image {
   transform:scale(1.025);
